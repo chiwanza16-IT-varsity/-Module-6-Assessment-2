@@ -1,0 +1,400 @@
+/*Google fonts*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+/*----- VARIABLES CSS -----*/
+:root {
+  /*Custom Colors*/
+  --first-color: rgb(196, 15, 9);
+  --text-color: #000;
+  --bg-color: #0000003b;
+  --white-color: #fff;
+
+  /*Typography*/
+  --body-font: "Montserrat", sans-serif;
+  --big-font-size: 3rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.93rem;
+  --small-font-size: 0.75rem;
+  --smaller-font-size: 0.5rem;
+
+  /*z index*/
+  --z-normal: 1;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --big-font-size: 6rem;
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*----- BASE -----*/
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-weight: initial;
+  background-color: var(--bg-color);
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+p {
+  font-size: var(--normal-font-size);
+}
+
+/*CONTENT*/
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline-block;
+}
+
+/*----- LAYOUT -----*/
+.container {
+  max-width: 1200px;
+  margin-inline: 1rem;
+}
+
+.grid {
+  display: grid;
+}
+
+/*Home*/
+
+.close-icon a {
+    position: absolute;
+    color: var(--text-color);
+    top: 15px;
+    right: 35px;
+    font-size: 35px;
+    transition: .5s;
+}
+
+.close-icon a:hover {
+    color: var(--first-color);
+    transform: rotate(180deg);
+}
+
+.section {
+  height: 100vh;
+  padding-top: 1rem;
+  margin-bottom: 250px;
+}
+
+.home {
+  position: relative;
+  grid-template-columns: 1fr;
+  row-gap: 2.4rem;
+  height: 105%;
+  align-content: flex-end;
+  overflow: hidden;
+}
+
+.home__title {
+  position: absolute;
+  top: 3%;
+  font-size: var(--big-font-size);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: var(--text-color);
+}
+
+.home__img {
+  position: absolute;
+  top: 7%;
+  left: 20%;
+  width: 394px;
+  z-index: var(--z-normal);
+}
+
+.home__information {
+  padding-left: 4.25rem;
+  padding-right: 2rem;
+  color: var(--text-color);
+}
+
+.home__subtitle {
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+}
+
+
+/*----- COMPONENTS -----*/
+.icon-box {
+  color: var(--icon-color);
+  font-size: 3rem;
+}
+
+
+.icon-box--small {
+  font-size: 1rem;
+}
+
+
+.box {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+
+.box__content {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: 0px 10px 24px hsla(0, 0%, 0%, 0.6);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+
+.box__medium {
+  width: 150px;
+  height: 150px;
+  padding: 1.5rem 0.75rem;
+}
+
+
+.box__medium-title {
+  font-size: 3rem;
+  color: var(--white-color);
+}
+
+
+.box__medium-description {
+  font-size: var(--normal-font-size);
+  margin-bottom: 0.5rem;
+}
+
+
+.box__medium-detail {
+  font-size: var(--small-font-size);
+}
+
+
+.box__small {
+  width: 70px;
+  height: 70px;
+  padding: 0.75rem 0;
+  margin-bottom: 0.625rem;
+}
+
+
+.box__small-title {
+  font-size: var(--small-font-size);
+  color: var(--white-color);
+}
+
+.box__small-detail {
+  font-size: var(--smaller-font-size);
+}
+
+/*********** INDIVIDUALS CARS *********/
+.cars {
+  width: 500px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.cars img {
+  width: 100%;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.5);
+  transition: all 1s ease-out;
+}
+
+.cars img:hover {
+  transform: scale(4);
+}
+
+/*********** CARS PRICES *********/
+.price h5 {
+  font-size: 30px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.price h5 span {
+  font-size: 15px;
+  display: block;
+  text-decoration: underline;
+}
+
+button {
+  display: block;
+  padding: 10px;
+  font-weight: 700;
+  margin: 30px auto;
+  font-size: 20px;
+  letter-spacing: 3px;
+  border: none;
+  border-bottom: 1px solid var(--white-color);
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.5);
+}
+
+
+/*********** TOP INFINITY ROLLER *********/
+.wrapper {
+  width: 100%;
+  max-width: 1536px;
+  height: 100px;
+  margin-top: 5rem;
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+      to right,
+      rgba(0,0,0,0),
+      rgba(0,0,0,1) 20%,
+      rgba(0,0,0,1) 80%,
+      rgba(0,0,0,0)
+      );
+}
+
+@keyframes scrollLeft {
+  from {}
+
+  to{
+      left: -200px;
+  }
+}
+
+.item {
+  width: 200px;
+  height: 100px;
+  border-radius: 6px;
+  position: absolute;
+  left: max(calc(200px * 8), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.item img {
+  width: 80%;
+  height: 100%;
+}
+
+.item1 {
+  animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.item7 {
+  animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+
+.item8 {
+  animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+/*GO UP ICON*/
+.up-icon a{
+  color: var(--text-color);
+  font-size: 2rem;
+  display: block;
+  float: right;
+  margin: 20px 20px;
+  transition: all .5s;
+}
+
+.up-icon a:hover {
+  transform: translateY(-5px);
+}
+
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  .section {
+    height: 100vh;
+    padding: 0; 
+  }
+ 
+
+  .home {
+    grid-template-columns: 402px 322px;
+    grid-template-rows: 152px;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+
+  .home__title {
+    top: 23%;
+    left: 0;
+    right: 0;
+    writing-mode: initial;
+    transform: initial;
+    text-align: center;
+  }
+
+  .home__img {
+    width: 569px;
+    top: 32%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home__information {
+    padding: 0;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin-inline: auto;
+  }
+}
